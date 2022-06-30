@@ -1,0 +1,815 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@300&family=Inconsolata:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
+:root {
+  /*-------------------- colores primarios --------------------*/
+  --colorPrimario: #202020;
+  --colorSecundario: #313131;
+  --colorTerciario: #212121;
+  --colorCuaternario: #181818;
+  --colorOpciones: #4d4d4d;
+  --notificaciones: #ff0000;
+  /*--------------------- colores neutros ---------------------*/
+  --colorNeutroClaro: #fff;
+  --colorNeutroOscuro: #000;
+  /*-------------------------- hover --------------------------*/
+  --hover: #383838;
+  --hover2: #4d4d4d;
+  /*----------------------- color texto -----------------------*/
+  --colorTextoPrimario: #fff;
+  --colorTextoSecundario: #808080;
+  --colorTextoTerciario: #000;
+  /*------------------------- bordes -------------------------*/
+  --colorBorde: #808080;
+  /*--------------------- recomendacione ---------------------*/
+  --colorRecomendaciones: #373737;
+  /*------------------------- tiempo -------------------------*/
+  --tiempoTexto: #ffffff;
+  --tiempoFondo: #000000b6;
+  /* --logoFontFamily */
+  /*--------------------- tama;o de letra ---------------------*/
+  --tamanioPequenio: 12px;
+  --tamanioPrincipal: 14px;
+  --tamanioSecundario: 16px;
+  --tamanioTerciario: 18px;
+}
+
+body {
+  background: var(--colorPrimario);
+  max-width: 100vw;
+  max-height: 100vh;
+  font-family: 'Roboto', arial, sans-serif;
+}
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+header {
+  background: var(--colorPrimario);
+  width: 100%;
+  height: 56px;
+  background-position: fixed;
+  position: fixed;
+}
+/*-------------------- barra de navegacion --------------------*/
+nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/*--------------------------- logo ---------------------------*/
+nav .logo {
+  height: 100%;
+  background: var(--colorPrimario);
+  display: flex;
+  align-items: center;
+  font-family: 'League Gothic', sans-serif;
+}
+nav .logo .btn {
+  width: 40px;
+  height: 40px;
+  margin-right: 37px;
+}
+nav .logo .btn img {
+  width: 20px;
+  height: 20px;
+  margin: 0 20px;
+}
+nav .logo a {
+  display: flex;
+  align-items: center;
+  color: var(--colorTextoPrimario);
+  text-decoration: none;
+  font-family: var(--logoFontFamily);
+  position: relative;
+  font-family: 'League Gothic', sans-serif;
+  font-weight: 100;
+  width: 90px;
+}
+nav .logo .region {
+  color: var(--colorTextoSecundario);
+  position: absolute;
+  top: -6px;
+  right: -12px;
+  font-size: 13px;
+}
+/*-------------------------- buscador --------------------------*/
+nav .buscador {
+  display: flex;
+}
+nav .buscador form {
+  display: flex;
+}
+nav .buscador input {
+  width: 539px;
+  height: 40px;
+  padding: 2px 6px;
+  border: 2px solid var(--colorSecundario);
+  background-color: var(--colorNeutroOscuro);
+}
+nav .buscador input::placeholder {
+  font-size: 16px;
+  font-weight: bold;
+}
+nav .buscador button {
+  width: 30px;
+  height: 40px;
+}
+nav .buscador button[type='submit'] {
+  width: 64px;
+  height: 40px;
+  background: var(--colorSecundario);
+  margin-right: 10px;
+}
+/*--------------------------- cuenta ---------------------------*/
+nav .cuenta {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin-right: 45px;
+}
+nav .cuenta > li {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin: 0 5px;
+}
+nav .cuenta .perfil {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: greenyellow;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+/*--------------------------- main ---------------------------*/
+main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+/*----------------------- menu lateral -----------------------*/
+main aside {
+  max-width: 240px;
+  height: 93%;
+  background-position: fixed;
+  background: var(--colorTerciario);
+  width: 100%;
+  background-position: fixed;
+  position: fixed;
+  top: 56px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+main aside::-webkit-scrollbar {
+  background: transparent;
+  margin-right: 100px;
+  margin-left: 100px;
+  padding: 40px;
+  width: 10px;
+}
+main aside::-webkit-scrollbar-thumb {
+  background: var(--colorBorde);
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  display: none;
+}
+main aside::-webkit-scrollbar-corner {
+  display: none;
+}
+main aside:hover::-webkit-scrollbar-thumb {
+  display: block;
+}
+/*----------------- linea de separacion de categorias -----------------*/
+.line {
+  width: 90%;
+  margin: 20px 0;
+
+  border-top: 1px solid var(--hover);
+}
+/* imagenes */
+main aside img {
+  width: 24px;
+  height: 24px;
+}
+main aside p {
+  display: flex;
+
+  align-items: center;
+
+  font-family: 'Encode Sans', sans-serif;
+  font-size: 14px;
+}
+main aside h2 {
+  padding: 8px 24px;
+  width: 240px;
+  height: 30px;
+
+  font-size: 14px;
+  font-family: 'Inconsolata', monospace;
+  color: #aaa;
+}
+
+main aside a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  width: 100%;
+  height: 40px;
+  padding: 8px 24px;
+}
+main aside ul li a:hover {
+  background: var(--hover);
+}
+
+main aside img,
+main aside span {
+  margin-right: 17px;
+}
+/*------------------------ suscripciones ------------------------*/
+main aside .sub .imagen {
+  width: 15%;
+  height: 100%;
+}
+main aside .sub .imagen-perfil {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  overflow: hidden;
+}
+main aside .sub .imagen-perfil img {
+  width: 100%;
+  height: 100%;
+}
+main aside .sub .nombre {
+  width: 65%;
+  height: 100%;
+  overflow: hidden;
+  padding: 8px 24px;
+}
+main aside .sub .estado {
+  width: 20%;
+  height: 100%;
+}
+main aside .sub a {
+  padding: 8px 24px;
+}
+/*------------------ suscripciones boton ------------------*/
+main aside .sub .btn {
+  color: var(--colorNeutroClaro);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 8px 24px;
+}
+main aside .sub .btn:hover {
+  background: var(--hover);
+}
+/* mas de youtube y configuraciones*/
+main aside .mas-youtube li a,
+main aside .configuracion li a {
+  display: flex;
+  align-items: center;
+}
+
+/*-------------------------- Politicas -------------------------*/
+.politicas {
+  width: 80%;
+  padding: 0 15px;
+}
+.politicas div {
+  padding: 0 1px;
+  margin: 10px 0;
+}
+.politicas a {
+  color: #aaaaaa;
+  text-decoration: none;
+  font-size: 13px;
+  font-family: 'Encode Sans', sans-serif;
+  padding: 8px 3px;
+  display: inline;
+}
+.politicas p {
+  color: #717171;
+  font-size: 12px;
+  padding: 8px 5px;
+}
+
+/*----------------------- cuerpo video -----------------------*/
+/*--------------------- recomendaciones ---------------------*/
+main .cuerpo-principal .recomendacion {
+  background: var(--colorTerciario);
+  width: 81%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow: scroll;
+  background-position: fixed;
+  position: fixed;
+  top: 56px;
+  left: 240px;
+}
+main .cuerpo-principal .recomendacion::-webkit-scrollbar {
+  display: none;
+}
+/*------------------------- opciones -------------------------*/
+main .cuerpo-principal .recomendacion .opciones {
+  background-color: var(--colorRecomendaciones);
+  border: 1px solid var(--colorOpciones);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  color: var(--colorTextoPrimario);
+  font-size: 17px;
+  margin-left: 12px;
+  padding: 5px 12px;
+  text-align: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+main .cuerpo-principal .recomendacion .opciones:hover {
+  border: 1px solid var(--colorBorde);
+  background: var(--hover2);
+}
+main .cuerpo-principal .recomendacion .ubicacion {
+  background: var(--colorNeutroClaro);
+  color: var(--colorNeutroOscuro);
+}
+/*--------------------- CONTENIDO VIDEOS ---------------------*/
+main .grid-videos {
+  position: fixed;
+  top: 115px;
+  left: 255px;
+  width: 81%;
+  height: 85%;
+  display: grid;
+  grid-template-columns: repeat(4, 23.6%);
+  grid-template-rows: repeat(5, 301px);
+  column-gap: 15px;
+  background: var(--colorCuaternario);
+  padding: 15px;
+  overflow-y: scroll;
+}
+main .grid-videos::-webkit-scrollbar {
+  background: transparent;
+  margin-right: 100px;
+  margin-left: 100px;
+  padding: 40px;
+  width: 10px;
+}
+main .grid-videos::-webkit-scrollbar-thumb {
+  background: var(--colorBorde);
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  display: none;
+}
+main .grid-videos::-webkit-scrollbar-corner {
+  display: none;
+}
+main .grid-videos:hover::-webkit-scrollbar-thumb {
+  display: block;
+}
+/*-------------------------- spam --------------------------*/
+main .grid-videos .spam .visitar {
+  background: rgba(0, 0, 0);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  padding: 5px;
+}
+main .grid-videos .spam .imagen-spam:hover .visitar {
+  animation: spam 5s forwards;
+  -webkit-animation: spam 5s forwards;
+}
+@keyframes spam {
+  0% {
+    width: 40%;
+    height: 20%;
+    bottom: 0;
+    right: 0;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+main .grid-videos .spam .detalles {
+  color: white;
+}
+main .grid-videos .spam .detalles .descripcion {
+  margin: 10px 0px;
+}
+/*-------------------------- videos --------------------------*/
+main .grid-videos .spam,
+main .grid-videos .videos {
+  width: 100%;
+  height: 301px;
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+main .grid-videos .imagen-spam,
+main .grid-videos .imagen-video {
+  /* width: 261px; */
+  height: 146px;
+  overflow: hidden;
+  position: relative;
+}
+main .grid-videos .imagen-spam img,
+main .grid-videos .imagen-video img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+main .grid-videos .imagen-video:hover img {
+  animation: reproduccion 500ms linear 2s forwards;
+  -webkit-animation: reproduccion 500ms linear 2s forwards;
+}
+/* animacion del reproductor */
+@keyframes reproduccion {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+main .grid-videos .imagen-video iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+main .grid-videos .imagen-video p {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  padding: 5px;
+  color: var(--tiempoTexto);
+  background: var(--tiempoFondo);
+}
+main .grid-videos .imagen-video .tiempo {
+  z-index: 1;
+}
+/* animacion texto dentro del video */
+main .grid-videos .imagen-video:hover .tiempo {
+  animation: reproduccion 1s linear forwards;
+  -webkit-animation: reproduccion 1s linear forwards;
+}
+main .grid-videos .imagen-video .mensaje-video {
+  display: none;
+  z-index: 1;
+}
+main .grid-videos .imagen-video:hover .mensaje-video {
+  display: block;
+  animation: reproduccion 100ms linear 2s forwards;
+  -webkit-animation: reproduccion 100ms linear 2s forwards;
+}
+/*------------------------ animacion ------------------------*/
+main .grid-videos .videos:hover {
+  z-index: 2;
+  animation: videos 1s 2s forwards;
+  -webkit-animation: videos 1s 2s forwards;
+}
+/*------------------------- animacion -------------------------*/
+@keyframes videos {
+  from {
+    background: var(--colorPrimario);
+  }
+  to {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    background: var(--colorPrimario);
+  }
+}
+main .grid-videos .superior:hover {
+  animation: video-superior 1s 2s forwards;
+  -webkit-animation: video-superior 1s 2s forwards;
+}
+@keyframes video-superior {
+  from {
+    background: var(--colorPrimario);
+  }
+  to {
+    transform: scale(1.2) translate(0px, 40px);
+    -webkit-transform: scale(1.2) translate(0px, 40px);
+    -moz-transform: scale(1.2) translate(0px, 40px);
+    -ms-transform: scale(1.2) translate(0px, 40px);
+    -o-transform: scale(1.2) translate(0px, 40px);
+    background: var(--colorPrimario);
+  }
+}
+/*------------------------- animacion -------------------------*/
+
+main .grid-videos .superior-derecha:hover {
+  animation: video-superior-derecha 1s 2s forwards;
+  -webkit-animation: video-superior-derecha 1s 2s forwards;
+}
+@keyframes video-superior-derecha {
+  from {
+    background: var(--colorPrimario);
+  }
+  to {
+    transform: scale(1.2) translate(-20px, 40px);
+    -webkit-transform: scale(1.2) translate(-20px, 40px);
+    -moz-transform: scale(1.2) translate(-20px, 40px);
+    -ms-transform: scale(1.2) translate(-20px, 40px);
+    -o-transform: scale(1.2) translate(-20px, 40px);
+    background: var(--colorPrimario);
+  }
+}
+/*------------------------- animacion -------------------------*/
+main .grid-videos .lateral-izquierda:hover {
+  animation: video-lateral-izquierda 1s 2s forwards;
+  -webkit-animation: video-lateral-izquierda 1s 2s forwards;
+}
+@keyframes video-lateral-izquierda {
+  from {
+    background: var(--colorPrimario);
+  }
+  to {
+    transform: scale(1.2) translate(20px, 0);
+    -webkit-transform: scale(1.2) translate(20px, 0);
+    -moz-transform: scale(1.2) translate(20px, 0);
+    -ms-transform: scale(1.2) translate(20px, 0);
+    -o-transform: scale(1.2) translate(20px, 0);
+    background: var(--colorPrimario);
+  }
+}
+/*------------------------- animacion -------------------------*/
+main .grid-videos .lateral-derecha:hover {
+  animation: video-lateral-derecha 1s 2s forwards;
+  -webkit-animation: video-lateral-derecha 1s 2s forwards;
+}
+@keyframes video-lateral-derecha {
+  from {
+    background: var(--colorPrimario);
+  }
+  to {
+    transform: scale(1.2) translate(-20px, 0);
+    -webkit-transform: scale(1.2) translate(-20px, 0);
+    -moz-transform: scale(1.2) translate(-20px, 0);
+    -ms-transform: scale(1.2) translate(-20px, 0);
+    -o-transform: scale(1.2) translate(-20px, 0);
+    background: var(--colorPrimario);
+  }
+}
+/*-------------- agregando los botones ocultos --------------*/
+main .grid-videos .videos .opcion {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  background: var(--colorPrimario);
+  padding: 5px;
+}
+main .grid-videos .videos .opcion .btn-opcion {
+  width: 90%;
+  height: 30px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 6px 16px;
+  background: var(--colorRecomendaciones);
+  margin: 5px auto;
+  font-size: 12px;
+}
+main .grid-videos .videos:hover .opcion {
+  animation: btn-oculto 100ms 2s forwards;
+  -webkit-animation: btn-oculto 100ms 2s forwards;
+}
+/*------------------------- animando -------------------------*/
+@keyframes btn-oculto {
+  to {
+    opacity: 1;
+  }
+}
+/*-------------------- detalles del video --------------------*/
+main .grid-videos .detalles-video {
+  width: 100%;
+  display: flex;
+  padding: 5px;
+}
+main .grid-videos .detalles-video .creador a {
+  display: block;
+  width: 36px;
+  height: 36px;
+  overflow: hidden;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin: 12px 12px 0 0;
+}
+main .grid-videos .detalles-video .creador a img {
+  width: 100%;
+  height: 100%;
+}
+main .grid-videos .detalles-video .informacion-video {
+  width: 189px;
+}
+main .grid-videos .detalles-video h3 {
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: var(--colorTextoPrimario);
+}
+main .grid-videos .detalles-video p,
+main .grid-videos .detalles-video a {
+  font-size: 12px;
+  color: var(--colorTextoSecundario);
+  text-decoration: none;
+}
+
+main .grid-videos .detalles-video .opciones-video {
+  width: 20px;
+  position: relative;
+}
+main .grid-videos .detalles-video .opciones-video .btn {
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: -10px;
+  color: var(--colorNeutroClaro);
+  cursor: pointer;
+}
+main .grid-videos .videos:hover .detalles-video .opciones-video .btn {
+  display: block;
+}
+main .grid-videos .enlaces-video {
+  display: none;
+}
+/*--------------------------- shorts ---------------------------*/
+main .grid-videos .shorts {
+  /* width: 100%; */
+  border-top: 4px solid white;
+  grid-column: span 4;
+  grid-row: span 2;
+}
+main .grid-videos .shorts .cabecera-shorts {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 0;
+  color: var(--colorTextoPrimario);
+}
+main .grid-videos .shorts .cabecera-shorts .titulo-shorts {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  position: relative;
+}
+main .grid-videos .shorts .cabecera-shorts .titulo-shorts::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: white;
+  position: absolute;
+  left: 23px;
+  z-index: -1;
+}
+main .grid-videos .shorts .cabecera-shorts .titulo-shorts img {
+  margin-right: 15px;
+}
+main .grid-videos .shorts .cabecera-shorts .btn {
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+}
+main .grid-videos .shorts .cabecera-shorts .btn span {
+  width: 24px;
+  height: 24px;
+  color: var(--colorNeutroClaro);
+}
+main .grid-videos .shorts .grid-short {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 170px);
+  grid-template-rows: 375px;
+  column-gap: 10px;
+}
+main .grid-videos .shorts .grid-short .video-short {
+  width: 100%;
+  height: 100%;
+}
+main .grid-videos .shorts .grid-short .video-short img {
+  width: 100%;
+  height: 310px;
+  margin: auto;
+}
+main .grid-videos .shorts .grid-short .video-short .apartado {
+  display: flex;
+}
+main .grid-videos .shorts .grid-short .video-short .apartado .info-short h3 {
+  margin: 10px 0;
+  color: var(--colorTextoPrimario);
+  font-size: 14px;
+}
+main .grid-videos .shorts .grid-short .video-short .apartado .info-short p {
+  color: var(--colorTextoSecundario);
+  font-size: 14px;
+}
+main .grid-videos .shorts .grid-short .video-short .apartado .btn {
+  width: 26px;
+  height: 26px;
+  background: none;
+  border: none;
+}
+main .grid-videos .shorts .grid-short .video-short .apartado .btn span {
+  width: 24px;
+  height: 24px;
+  color: var(--colorNeutroClaro);
+  display: none;
+}
+main .grid-videos .shorts .grid-short .video-short:hover .apartado .btn span {
+  display: block;
+}
+main .grid-videos .shorts .flecha {
+  width: 100%;
+  height: 48px;
+  margin-top: 20px;
+  padding: 2px 0;
+  background: none;
+  border: none;
+  border-bottom: 4px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+main .grid-videos .shorts .flecha div {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .grid-videos .shorts .flecha div span {
+  width: 24px;
+  height: 24px;
+  color: var(--colorNeutroClaro);
+}
+a {
+  text-decoration: none;
+}
